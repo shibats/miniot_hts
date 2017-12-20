@@ -25,7 +25,7 @@ class Hts_rpy():
         クラスインスタンスを初期化
         """
         import RPi.GPIO as GPIO
-        import dht11
+        from . import dht11
         # GPIOを初期化
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
