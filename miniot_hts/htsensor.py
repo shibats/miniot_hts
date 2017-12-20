@@ -97,7 +97,7 @@ def get_th_from_web():
     for tr in tr_pat.findall(data_table):
         # tdの中のテキストを取得
         tds = td_pat.findall(tr)
-        if len(tds) >= 8:
+        if len(tds) <= 7:
             # tdの要素数が8つなかったら，ループの先頭に戻る
             continue
         try:
