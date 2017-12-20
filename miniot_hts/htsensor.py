@@ -25,14 +25,14 @@ class Hts_rpy():
         クラスインスタンスを初期化
         """
         import RPi.GPIO as GPIO
-        from . import dht11
+        from . import dht
         # GPIOを初期化
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
         GPIO.cleanup()
 
         # ピン番号14からセンサーの情報を得る
-        self.sensor = instance = dht11.DHT11(pin=14)
+        self.sensor = instance = dht.DHT11(pin=14)
         # センサーから読み込んだデータ
         self.t = 0
         self.h = 0
