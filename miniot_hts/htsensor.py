@@ -97,13 +97,19 @@ def get_th_from_web():
     for tr in tr_pat.findall(data_table):
         # tdの中のテキストを取得
         tds = td_pat.findall(tr)
-        if len(tds) != 8:
+        if len(tds) >= 8:
             # tdの要素数が8つなかったら，ループの先頭に戻る
             continue
         try:
-            # tdの中の気温，湿度を数値に変換してみる
-            cur_temp = float(tds[1])
-            cur_hum = int(tds[6])
+            # tdの中の気温，湿度を数値に変換する
+            if len(tds) == 9:
+                # 冬期，積雪深データがある場合
+                cur_temp = float(tds[1])
+                cur_hum = int(tds[7])
+            else:
+                # 積雪深データがない場合
+                cur_temp = float(tds[1])
+                cur_hum = int(tds[6])
         except:
             # tdの中のテキストが数値に変換できなかった
             pass
