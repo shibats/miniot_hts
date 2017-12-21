@@ -12,6 +12,7 @@ __all__ = ['read', 'get_temp', 'get_humid', 'calc_hi',
            'get_heatstroke_advice', 'get_virus_advice',
            'get_thinfo' ]
 
+from datetime import datetime
 from .htsensor import Hts_rpy, Hts_tokyo
 
 
